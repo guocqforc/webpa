@@ -1,3 +1,4 @@
+# coding:utf-8
 """
 Django settings for webpa project.
 
@@ -9,6 +10,7 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 """
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
@@ -56,11 +58,27 @@ WSGI_APPLICATION = 'webpa.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
 
+DATABASE_ENGINE = 'mysql'
+DATABASE_NAME = 'webpadb'
+DATABASE_USER = 'root'
+DATABASE_PASSWORD = 'root'
+DATABASE_HOST = '127.0.0.1'
+DATABASE_PORT = '3306'
+
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    # }
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+        'ENGINE': 'django.db.backends.mysql',# Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': DATABASE_NAME,  # Or path to database file if using sqlite3.
+        'USER': DATABASE_USER,  # Not used with sqlite3.
+        'PASSWORD': DATABASE_PASSWORD,  # Not used with sqlite3.
+        'HOST': DATABASE_HOST,  # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': DATABASE_PORT,  # Set to empty string for default. Not used with sqlite3.
+        'CONN_MAX_AGE': None,  # 永不关闭
+    },
 }
 
 # Internationalization
