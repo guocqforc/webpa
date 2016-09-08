@@ -1,0 +1,15 @@
+.idea/*
+tags
+.tags*
+*.pyc
+*.log
+webpa/.idea
+doc/protobuf/python/*
+doc/protobuf/java/*
+doc/protobuf/cpp/*
+doc/protobuf/lua/*
+*.swp
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+
